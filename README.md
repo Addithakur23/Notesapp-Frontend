@@ -14,14 +14,14 @@ It also supports role-based access (Admin & User).
 
 ## 🌐 Live Demo
 
-[https://your-frontend-url.vercel.app](https://notesapp-frontend-mocha.vercel.app/)
+https://notesapp-frontend-mocha.vercel.app/
 
 ## 🔗 Backend API
 
 The frontend connects to the deployed backend API hosted on Render.
 
 Base URL is managed using environment variables:
-VITE_API_URL=[https://your-backend-url.onrender.com](https://notesapp-backend-asli.onrender.com)
+VITE_API_URL=https://notesapp-backend-asli.onrender.com
 ## ⚙️ Installation (Local Setup)
 
 1. Clone the repository:
@@ -37,7 +37,7 @@ npm install
 
 4. Create a `.env` file:
 
-VITE_API_URL=[https://your-backend-url.onrender.com](https://notesapp-backend-asli.onrender.com)
+VITE_API_URL=https://notesapp-backend-asli.onrender.com
 
 
 5. Start development server:
@@ -68,4 +68,4 @@ src/
 
 Aditya
 
-git clone [https://github.com/yourusername/frontend-repo.git](https://github.com/Addithakur23/Notesapp-Frontend.git)
+git clone https://github.com/Addithakur23/Notesapp-Frontend.git
