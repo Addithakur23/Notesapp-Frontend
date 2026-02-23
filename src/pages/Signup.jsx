@@ -3,13 +3,14 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Login from './Login'
 import { Link,Outlet } from 'react-router-dom'
+import BASE_URL from '../config'
 const Signup = () => {
     const [Name, setName] = useState("")
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
     let navigate=useNavigate()
       async function handleSignups(){
- let res= await fetch("http://localhost:3000/api/Signup",{method:"POST",headers:{
+ let res= await fetch(`${BASE_URL}/api/Signup`,{method:"POST",headers:{
       "Content-Type": "application/json"
     },body:JSON.stringify({Name,Email,Password})})
     

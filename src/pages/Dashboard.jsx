@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BASE_URL from '../config.js'
 import { useState,useEffect } from 'react'
 const Dashboard = () => {
     const token=localStorage.getItem("token")
@@ -14,7 +15,7 @@ const Dashboard = () => {
 
    async function fetchNotes(){
 
-          try{  let res1=await fetch("http://localhost:3000/api/notes",{method:"GET",headers:{
+          try{  let res1=await fetch(`${BASE_URL}/api/notes`,{method:"GET",headers:{
       "Content-Type": "application/json",Authorization:`Bearer ${token}`
     }})
         let notes=await res1.json()
@@ -35,7 +36,7 @@ const Dashboard = () => {
     async function handleNotes(){
 if(EditingId){
     
-    let res=await fetch(`http://localhost:3000/api/notes/${EditingId}`,{method:"PUT",headers:{
+    let res=await fetch(`${BASE_URL}/api/notes/${EditingId}`,{method:"PUT",headers:{
       "Content-Type": "application/json",Authorization:`Bearer ${token}`
     },body:JSON.stringify({Title,Content})})
     let updatedNote=await res.json()
@@ -44,7 +45,7 @@ if(EditingId){
 
 }
 else{
-    let res=await fetch("http://localhost:3000/api/notes",{method:"POST",headers:{
+    let res=await fetch(`${BASE_URL}/api/notes`,{method:"POST",headers:{
   "Content-Type": "application/json",Authorization:`Bearer ${token}`
 },body:JSON.stringify({Title,Content})})
 let data=await res.json()
@@ -63,7 +64,7 @@ console.log("Note Created : ",data)
     }
 async function handleDelete(id){
         
-          let res=await fetch(`http://localhost:3000/api/notes/${id}`,{method:"DELETE",headers:{
+          let res=await fetch(`${BASE_URL}/api/notes/${id}`,{method:"DELETE",headers:{
       "Content-Type": "application/json",Authorization:`Bearer ${token}`
     }})
     let data=res.json()
@@ -78,7 +79,7 @@ async function handleEditClick(note){
   }
 
  async function handleUsers(){
-    let res1=await fetch("http://localhost:3000/api/users",{method:"GET",headers:{Authorization:`Bearer ${token}`
+    let res1=await fetch(`${BASE_URL}/api/users`,{method:"GET",headers:{Authorization:`Bearer ${token}`
     }})
     if(!res1.ok){
         console.log("Failed to fetch users")

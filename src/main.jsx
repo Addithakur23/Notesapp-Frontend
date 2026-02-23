@@ -6,6 +6,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Signup from './pages/Signup.jsx'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import BASE_URL from './config.js'
 
  const router=createBrowserRouter([{
     path:"/",

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import BASE_URL from '../config.js'
 import { Link,useNavigate } from 'react-router-dom'
 const Login = () => {
     const [Email, setEmail] = useState("")
@@ -7,7 +8,7 @@ const Login = () => {
     let navigate=useNavigate()
     async function handleLogins() {
       // e.preventDefault()
-     let res=await fetch("http://localhost:3000/api/Login",{method:"POST",headers:{
+     let res=await fetch(`${BASE_URL}/api/Login`,{method:"POST",headers:{
       "Content-Type": "application/json"
     },body:JSON.stringify({Email,Password})})
     const data=await res.json()
